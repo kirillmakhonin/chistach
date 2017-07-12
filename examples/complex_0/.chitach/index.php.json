@@ -1,0 +1,23 @@
+{
+    "root": true,
+    "functionDeclarations": [],
+    "functionCalls": [
+        {
+            "type": "FunctionCall",
+            "targetFunctionName": "test12",
+            "lineNo": 7
+        }
+    ],
+    "imports": [
+        {
+            "type": "ImportedElement",
+            "targetPath": "file1.php",
+            "lineNo": 3
+        },
+        {
+            "type": "ImportedElement",
+            "targetPath": "file2.php",
+            "lineNo": 4
+        }
+    ]
+}

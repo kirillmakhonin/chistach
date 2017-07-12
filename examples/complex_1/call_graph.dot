@@ -1,0 +1,16 @@
+digraph G {
+	ratio=fill; node[fontsize=24];
+
+	ENTRY [shape=diamond,style=filled,color="1.0 .3 1.0"];
+	ENTRY->test10;
+
+	test13->test14;
+
+	test12->test13;
+
+	test11->test12;
+
+	test10->test12;
+
+	subgraph "cluster_./main.php" { label="./main.php"; test14; test13; test12; test11; test10; };
+}

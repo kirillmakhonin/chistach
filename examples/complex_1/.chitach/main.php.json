@@ -1,0 +1,72 @@
+{
+    "root": true,
+    "functionDeclarations": [
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "test14",
+            "functionCalls": [],
+            "functionDeclarations": [],
+            "lineNo": 3
+        },
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "test13",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "test14",
+                    "lineNo": 8
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 7
+        },
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "test12",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "test13",
+                    "lineNo": 12
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 11
+        },
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "test11",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "test12",
+                    "lineNo": 22
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 17
+        },
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "test10",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "test12",
+                    "lineNo": 31
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 30
+        }
+    ],
+    "functionCalls": [
+        {
+            "type": "FunctionCall",
+            "targetFunctionName": "test10",
+            "lineNo": 34
+        }
+    ],
+    "imports": []
+}

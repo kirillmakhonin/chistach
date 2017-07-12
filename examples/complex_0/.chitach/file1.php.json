@@ -1,0 +1,33 @@
+{
+    "root": true,
+    "functionDeclarations": [
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "test11",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "test22",
+                    "lineNo": 4
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 3
+        },
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "test12",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "test21",
+                    "lineNo": 8
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 7
+        }
+    ],
+    "functionCalls": [],
+    "imports": []
+}

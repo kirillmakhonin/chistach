@@ -1,0 +1,9 @@
+digraph G {
+    one -> two;
+    one -> three;
+    one -> four;
+    four -> five -> six;
+    five -> one;
+    six -> two;
+    two [shape=diamond,style=filled,color=".7 .3 1.0"];
+}
