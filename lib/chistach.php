@@ -826,24 +826,31 @@ class Analyzer
             print("Analyze function decl. no. $functionDeclarationIndex: {$functionDeclaration->getFunctionName()}\n");
         }
 
-        $functionCallsIndexes = $this->functionCallIndexes[$functionDeclarationIndex];
+        $stack = [];
+        array_push($stack, $functionDeclarationIndex);
 
-        foreach ($functionCallsIndexes as $functionCallIndex)
+        while (count($stack) > 0)
         {
-            $targetFunctionIndex = $functionCallIndex;
+            $currentItemIndex = array_pop($stack);
+            $functionCallsIndexes = $this->functionCallIndexes[$currentItemIndex];
 
-            if ($this->functionDeclarationsUseFlagArray[$targetFunctionIndex])
-                continue;
-            else {
-                $this->functionDeclarationsUseFlagArray[$targetFunctionIndex] = true;
+            foreach ($functionCallsIndexes as $functionCallIndex)
+            {
+                $targetFunctionIndex = $functionCallIndex;
 
-                if ($this->parseConfiguration->verbose)
-                {
-                    $functionDeclaration = $this->functionDeclarationsArray[$targetFunctionIndex];
-                    print("Mark as used function decl. no. $targetFunctionIndex: {$functionDeclaration->getFunctionName()}\n");
+                if ($this->functionDeclarationsUseFlagArray[$targetFunctionIndex])
+                    continue;
+                else {
+                    $this->functionDeclarationsUseFlagArray[$targetFunctionIndex] = true;
+
+                    if ($this->parseConfiguration->verbose)
+                    {
+                        $functionDeclaration = $this->functionDeclarationsArray[$targetFunctionIndex];
+                        print("Mark as used function decl. no. $targetFunctionIndex: {$functionDeclaration->getFunctionName()}\n");
+                    }
+
+                   array_push($stack, $targetFunctionIndex);
                 }
-
-                $this->markFunctionCallsAsUsed($targetFunctionIndex);
             }
         }
     }
@@ -895,6 +902,7 @@ class Analyzer
         /**
          * Step 3. Recursive mark used functions (start from functions from step 1)
          */
+
         for ($i = 0; $i < count($this->functionDeclarationsUseFlagArray); $i++)
         {
             if ($this->functionDeclarationsUseFlagArray[$i])

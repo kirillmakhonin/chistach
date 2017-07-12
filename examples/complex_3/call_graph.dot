@@ -5,6 +5,14 @@ digraph G {
 	ENTRY->test12;
 	ENTRY->test11;
 
+	a->b;
+
+	b->c;
+
+	c->d;
+
+	d->a;
+
 	test11->test22;
 
 	test12->test21;
@@ -12,7 +20,7 @@ digraph G {
 
 	test22->test12;
 
-	subgraph "cluster_./index.php" { label="./index.php"; i1; };
+	subgraph "cluster_./index.php" { label="./index.php"; i1; a; b; c; d; };
 	subgraph "cluster_./complex_0/file1.php" { label="./complex_0/file1.php"; test11; test12; };
 	subgraph "cluster_./complex_0/file2.php" { label="./complex_0/file2.php"; test21; test22; };
 }

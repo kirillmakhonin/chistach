@@ -1,0 +1,83 @@
+{
+    "root": true,
+    "functionDeclarations": [
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "i1",
+            "functionCalls": [],
+            "functionDeclarations": [],
+            "lineNo": 9
+        },
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "a",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "b",
+                    "lineNo": 14
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 13
+        },
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "b",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "c",
+                    "lineNo": 18
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 17
+        },
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "c",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "d",
+                    "lineNo": 22
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 21
+        },
+        {
+            "type": "FunctionDeclaration",
+            "functionName": "d",
+            "functionCalls": [
+                {
+                    "type": "FunctionCall",
+                    "targetFunctionName": "a",
+                    "lineNo": 26
+                }
+            ],
+            "functionDeclarations": [],
+            "lineNo": 25
+        }
+    ],
+    "functionCalls": [
+        {
+            "type": "FunctionCall",
+            "targetFunctionName": "test12",
+            "lineNo": 7
+        }
+    ],
+    "imports": [
+        {
+            "type": "ImportedElement",
+            "targetPath": "file1.php",
+            "lineNo": 3
+        },
+        {
+            "type": "ImportedElement",
+            "targetPath": "file2.php",
+            "lineNo": 4
+        }
+    ]
+}
