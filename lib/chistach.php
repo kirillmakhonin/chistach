@@ -262,7 +262,7 @@ class ImportedElement extends CodeBlockElement implements JsonSerializable
  */
 class ParseConfiguration
 {
-    public $cacheDirectory = '.chitach';
+    public $cacheDirectory = '.chistach';
     public $verbose = false;
     public $multiFile = false;
 }
