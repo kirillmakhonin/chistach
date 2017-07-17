@@ -488,14 +488,36 @@ class TokenAnalyzer
                 $this->nextToken();
                 $this->readNonCode();
 
-                if (!$this->tokenIsConstantString())
+                if ($this->tokenIsConstantString()) {
+                    $fileName = $this->getTokenText();
+                    $fileName = trim($fileName, "\"'");
+
+                    $function = new ImportedElement($this->relativePath, $this->getLine(), $fileName);
+                    $this->registerImport($function);
+                }
+                elseif ($this->tokenIsOpenBracket()){
+                    $this->nextToken();
+                    $this->readNonCode();
+
+                    if (!$this->tokenIsConstantString()) {
+                        throw new Exception('Cannot find file for import. Find: ' . $this->getTokenText());
+                    }
+
+                    $fileName = $this->getTokenText();
+                    $fileName = trim($fileName, "\"'");
+
+                    $function = new ImportedElement($this->relativePath, $this->getLine(), $fileName);
+                    $this->registerImport($function);
+
+                    $this->nextToken();
+                    $this->readNonCode();
+                    if (!$this->tokenIsCloseBracket())
+                        throw new Exception('Cannot find close bracket for import. Find: ' . $this->getTokenText());
+
+                }
+                else {
                     throw new Exception('Cannot find file for import. Find: ' . $this->getTokenText());
-
-                $fileName = $this->getTokenText();
-                $fileName = trim($fileName, "\"'");
-
-                $function = new ImportedElement($this->relativePath, $this->getLine(), $fileName);
-                $this->registerImport($function);
+                }
 
             }
             else if ($this->tokenIsFunction())
@@ -733,6 +755,11 @@ class TokenAnalyzer
     private function tokenIsOpenBracket()
     {
         return !$this->isFullToken() && $this->getTokenText() == '(';
+    }
+
+    private function tokenIsCloseBracket()
+    {
+        return !$this->isFullToken() && $this->getTokenText() == ')';
     }
 
     private function readNonCode()

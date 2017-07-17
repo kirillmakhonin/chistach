@@ -3,10 +3,17 @@
     "functionDeclarations": [
         {
             "type": "FunctionDeclaration",
+            "functionName": "test30",
+            "functionCalls": [],
+            "functionDeclarations": [],
+            "lineNo": 7
+        },
+        {
+            "type": "FunctionDeclaration",
             "functionName": "i1",
             "functionCalls": [],
             "functionDeclarations": [],
-            "lineNo": 9
+            "lineNo": 15
         },
         {
             "type": "FunctionDeclaration",
@@ -15,11 +22,11 @@
                 {
                     "type": "FunctionCall",
                     "targetFunctionName": "b",
-                    "lineNo": 14
+                    "lineNo": 20
                 }
             ],
             "functionDeclarations": [],
-            "lineNo": 13
+            "lineNo": 19
         },
         {
             "type": "FunctionDeclaration",
@@ -28,11 +35,11 @@
                 {
                     "type": "FunctionCall",
                     "targetFunctionName": "c",
-                    "lineNo": 18
+                    "lineNo": 24
                 }
             ],
             "functionDeclarations": [],
-            "lineNo": 17
+            "lineNo": 23
         },
         {
             "type": "FunctionDeclaration",
@@ -41,11 +48,11 @@
                 {
                     "type": "FunctionCall",
                     "targetFunctionName": "d",
-                    "lineNo": 22
+                    "lineNo": 28
                 }
             ],
             "functionDeclarations": [],
-            "lineNo": 21
+            "lineNo": 27
         },
         {
             "type": "FunctionDeclaration",
@@ -54,18 +61,23 @@
                 {
                     "type": "FunctionCall",
                     "targetFunctionName": "a",
-                    "lineNo": 26
+                    "lineNo": 32
                 }
             ],
             "functionDeclarations": [],
-            "lineNo": 25
+            "lineNo": 31
         }
     ],
     "functionCalls": [
         {
             "type": "FunctionCall",
+            "targetFunctionName": "test30",
+            "lineNo": 11
+        },
+        {
+            "type": "FunctionCall",
             "targetFunctionName": "test12",
-            "lineNo": 7
+            "lineNo": 13
         }
     ],
     "imports": [
